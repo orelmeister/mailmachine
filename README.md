@@ -19,6 +19,19 @@ can use a `.mvar` (mail variables) file to specify variables common to this part
 	
 	`mailmachine -R=receivers.ml --globals=globalvars.mvar -s="Welcome {{name}}!" input.mmtmpl`
 
+- Automatically finding out the type of the mail to be sent
+	
+	`mailmachine --smartsend=./mail-campaigns/festember/c1`
+
+The folder `./mail-campaigns/festember/c1` should have the following structure:
+	
+	- template.mmtmpl
+	- mailinglist.ml
+	- subject.txt
+	- globals.mvar
+
+The first two files are required. The last file is optional. If the `subject.txt` file is missing, then the subject will be taken as the directory name (here, `c1`).
+	
 (For the first type of command, the subject can NOT be a template.)
 
 Format of a `.ml` file:
