@@ -2,17 +2,21 @@ Usage:
 ======
 
 - Sending the exact same mail to a list of people. No variables in the mail template
+	
 	`mailmachine -r="bob@job.com,job@bob.com" -s="Welcome" input.mmtmpl`
 
 - Sending the exact same mail to a list of people. However, the email template
 can contain variables that are specific to this particular batch of mails.
+	
 	`mailmachine -r="bob@job.com,job@bob.com" --globals=variables.mvar -s="Welcome to {{EventName}}" input.mmtmpl`
 	
 - Sending personalised mails. Requires the use of a `.ml` (mailing list) file
+	
 	`mailmachine -R=receivers.ml -s="Welcome {{name}}!" input.mmtmpl`
 
 - Sending personalised mails. Requires the use of a `.ml` file. In addition, one
 can use a `.mvar` (mail variables) file to specify variables common to this particular batch of mails.
+	
 	`mailmachine -R=receivers.ml --globals=globalvars.mvar -s="Welcome {{name}}!" input.mmtmpl`
 
 (For the first type of command, the subject can NOT be a template.)
